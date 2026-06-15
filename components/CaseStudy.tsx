@@ -45,7 +45,8 @@ export default function CaseStudy() {
                 poster="/posters/sunjuice-square.jpg"
                 label="Sun Juice JA"
                 category="Social content & ads"
-                className="aspect-square w-full"
+                landscape={false}
+                className="mx-auto aspect-[9/16] w-full max-w-[22rem]"
               />
             </Reveal>
 

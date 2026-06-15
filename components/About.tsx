@@ -28,38 +28,46 @@ export default function About() {
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-bone/70">
               Concept Creations is a boutique content and storytelling studio based in Kingston,
               Jamaica. We sit at the intersection of cinema and the scroll — crafting premium,
-              high-end visuals and native, UGC-style content for social, digital, film and
-              television.
+              high-end visuals and native, UGC-style content for social, digital, music videos, film
+              and television.
             </p>
           </Reveal>
           <Reveal delay={0.18}>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-bone/70">
               Beyond production, we offer full-service social media management for brands and
-              commercial clients — strategy, creative and community, handled end-to-end.
+              commercial clients — strategy, creative and community, handled end-to-end. Every
+              production runs on top-quality cinema equipment and a full-service team of directors,
+              DPs, producers, MUA, styling, location scouting and set design. It&apos;s the same
+              standard across every content type, from social to screen.
             </p>
           </Reveal>
         </div>
 
-        <div className="lg:col-span-5">
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-bone/10 bg-bone/[0.04]">
-            {STATS.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="noise-card relative flex flex-col gap-2 p-7 sm:p-9"
-              >
-                <span className="font-display text-4xl text-gold-gradient sm:text-5xl">{s.value}</span>
-                <span className="text-sm text-bone/60">{s.label}</span>
-              </motion.div>
-            ))}
-          </div>
-          <Reveal delay={0.2}>
-            <p className="mt-6 px-1 text-sm leading-relaxed text-bone/45">
-              Recovered from a decade of work across spirits, hospitality, retail and food &amp;
-              beverage — from boutique kitchens to household names.
+        {/* Stats — editorial, hairline-divided */}
+        <div className="flex flex-col justify-end lg:col-span-4 lg:col-start-9">
+          <Reveal delay={0.1}>
+            <dl className="border-t border-bone/12">
+              {STATS.map((s, i) => (
+                <motion.div
+                  key={s.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex items-baseline justify-between gap-6 border-b border-bone/12 py-5"
+                >
+                  <dt className="order-2 max-w-[9rem] text-right text-sm leading-snug text-bone/50">
+                    {s.label}
+                  </dt>
+                  <dd className="order-1 font-display text-4xl font-light tracking-tight text-bone sm:text-5xl">
+                    {s.value}
+                  </dd>
+                </motion.div>
+              ))}
+            </dl>
+            <p className="mt-6 text-xs leading-relaxed text-bone/35">
+              A decade of work across spirits, hospitality, retail and food &amp; beverage — from
+              boutique kitchens to household names.
             </p>
           </Reveal>
         </div>

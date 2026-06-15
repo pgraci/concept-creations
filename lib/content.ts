@@ -2,56 +2,18 @@ export const SITE = {
   name: "Concept Creations",
   tagline: "Boutique Content & Storytelling Studio",
   city: "Kingston, Jamaica",
-  email: "hello@conceptcreations.studio",
+  email: "info@conceptcreationstudios.com",
   instagram: "https://www.instagram.com/conceptcreations.studios/",
   instagramHandle: "@conceptcreations.studios",
   sunjuiceInstagram: "https://www.instagram.com/sunjuiceja/",
 };
-
-export type Service = {
-  no: string;
-  title: string;
-  blurb: string;
-  bullets: string[];
-};
-
-export const SERVICES: Service[] = [
-  {
-    no: "01",
-    title: "Premium Content",
-    blurb:
-      "Cinematic, high-end production for brands that refuse to blend in. Concept to colour-grade, shot with intention.",
-    bullets: ["Brand & commercial films", "Product & food cinematography", "Direction & art direction", "Studio & on-location"],
-  },
-  {
-    no: "02",
-    title: "UGC-Style Content",
-    blurb:
-      "Native, scroll-stopping content engineered to feel authentic and convert — built for the feed, not the festival.",
-    bullets: ["Creator-led short form", "Reels, TikTok & Shorts", "Hooks & retention edits", "Performance-driven ads"],
-  },
-  {
-    no: "03",
-    title: "Social Media Management",
-    blurb:
-      "Full-service strategy, content and community. We run the channel end-to-end so the brand simply shows up beautifully.",
-    bullets: ["Strategy & content calendars", "Daily publishing & community", "Always-on creative", "Analytics & growth"],
-  },
-  {
-    no: "04",
-    title: "Film & Television",
-    blurb:
-      "Broadcast-grade storytelling — narrative, documentary and commercial work for screen, stream and air.",
-    bullets: ["Commercials & TVCs", "Documentary & branded film", "Production services", "Post & finishing"],
-  },
-];
 
 export type Work = {
   title: string;
   category: string;
   src: string;
   poster: string;
-  span: "wide" | "tall" | "square";
+  orientation: "vertical" | "landscape";
   year: string;
 };
 
@@ -61,7 +23,7 @@ export const WORK: Work[] = [
     category: "Brand Film · Showreel",
     src: "/videos/reel.mp4",
     poster: "/posters/reel.jpg",
-    span: "square",
+    orientation: "vertical",
     year: "2025",
   },
   {
@@ -69,7 +31,7 @@ export const WORK: Work[] = [
     category: "Commercial · Food & Beverage",
     src: "/videos/sunjuice-wide.mp4",
     poster: "/posters/sunjuice-wide.jpg",
-    span: "wide",
+    orientation: "landscape",
     year: "2025",
   },
   {
@@ -77,7 +39,7 @@ export const WORK: Work[] = [
     category: "UGC · Short Form",
     src: "/videos/sunjuice-square.mp4",
     poster: "/posters/sunjuice-square.jpg",
-    span: "square",
+    orientation: "vertical",
     year: "2025",
   },
 ];
@@ -103,9 +65,29 @@ export const STATS = [
   { value: "100%", label: "Made in Jamaica" },
 ];
 
-export const PROCESS = [
-  { no: "01", title: "Discover", text: "We dig into the brand, the audience and the why. Strategy before a single frame." },
-  { no: "02", title: "Concept", text: "Creative direction, moodboards and scripts that turn the brief into a world." },
-  { no: "03", title: "Create", text: "Premium production or native UGC — captured, directed and edited to feel inevitable." },
-  { no: "04", title: "Amplify", text: "We publish, manage and optimise so the work actually moves the numbers." },
+// Full-service music-video crew.
+export const CREW = [
+  "Directors",
+  "Directors of Photography",
+  "Producers",
+  "Makeup (MUA)",
+  "Styling & Wardrobe",
+  "Location Scouting",
+  "Set Design",
+];
+
+// Placeholder music-video slots — swap in real artists / films later.
+export type MusicVideo = {
+  artist: string;
+  label: string;
+  scope: string;
+  year: string;
+  tint: "gold" | "coral" | "jade";
+  placeholder: boolean;
+};
+
+export const MUSIC_VIDEOS: MusicVideo[] = [
+  { artist: "Bruno Mars", label: "Official Music Video", scope: "International · On location", year: "Coming soon", tint: "gold", placeholder: true },
+  { artist: "Rihanna", label: "Official Music Video", scope: "International · On location", year: "Coming soon", tint: "coral", placeholder: true },
+  { artist: "Drake", label: "Official Music Video", scope: "International · On location", year: "Coming soon", tint: "jade", placeholder: true },
 ];

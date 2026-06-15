@@ -38,7 +38,7 @@ export default function AnimatedHeading({
       }}
     >
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden align-bottom">
+        <span key={i} className="inline-block overflow-hidden align-bottom pb-[0.18em] -mb-[0.18em]">
           <motion.span
             className={`inline-block ${highlightWords.has(word) ? "text-gold-gradient italic" : ""}`}
             variants={{

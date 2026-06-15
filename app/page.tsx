@@ -1,29 +1,33 @@
+import { IntroProvider } from "@/components/Intro";
+import { LightboxProvider } from "@/components/Lightbox";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import About from "@/components/About";
-import Services from "@/components/Services";
 import Work from "@/components/Work";
+import MusicVideos from "@/components/MusicVideos";
 import CaseStudy from "@/components/CaseStudy";
-import Process from "@/components/Process";
 import Clients from "@/components/Clients";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="grain relative">
-      <Nav />
-      <Hero />
-      <Marquee />
-      <About />
-      <Services />
-      <Work />
-      <CaseStudy />
-      <Process />
-      <Clients />
-      <Contact />
-      <Footer />
-    </main>
+    <IntroProvider>
+      <LightboxProvider>
+        <main className="grain relative">
+          <Nav />
+          <Hero />
+          <Marquee />
+          <About />
+          <Work />
+          <MusicVideos />
+          <CaseStudy />
+          <Clients />
+          <Contact />
+          <Footer />
+        </main>
+      </LightboxProvider>
+    </IntroProvider>
   );
 }

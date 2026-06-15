@@ -31,12 +31,17 @@ export default function Footer() {
 
       <div className="mx-auto mt-20 max-w-[1500px] px-[var(--gutter)] pb-10">
         <div className="flex flex-col gap-8 border-t border-bone/10 py-10 sm:flex-row sm:items-center sm:justify-between">
-          <Image src="/brand/logo.png" alt="Concept Creations" width={200} height={54} className="h-8 w-auto" />
+          <Image
+            src="/brand/logo.png"
+            alt="Concept Creations"
+            width={200}
+            height={54}
+            className="h-10 w-auto max-w-[200px] shrink-0 self-start object-contain"
+          />
 
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-bone/60">
             <a href="#work" className="hover:text-gold">Work</a>
-            <a href="#services" className="hover:text-gold">Services</a>
-            <a href="#case-study" className="hover:text-gold">Sun Juice</a>
+            <a href="#case-study" className="hover:text-gold">Case Studies</a>
             <a href="#clients" className="hover:text-gold">Clients</a>
             <a href="#contact" className="hover:text-gold">Contact</a>
           </nav>

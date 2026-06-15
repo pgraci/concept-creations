@@ -12,6 +12,18 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+/* Filmic "scene" cadence — gentle snap between sections on larger screens. */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+  main > section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
 }
 
 body {

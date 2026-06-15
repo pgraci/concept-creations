@@ -7,8 +7,7 @@ import { SITE } from "@/lib/content";
 
 const LINKS = [
   { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Sun Juice", href: "#case-study" },
+  { label: "Case Studies", href: "#case-study" },
   { label: "Clients", href: "#clients" },
   { label: "Contact", href: "#contact" },
 ];
@@ -45,10 +44,10 @@ export default function Nav() {
             <Image
               src="/brand/logo.png"
               alt="Concept Creations"
-              width={190}
-              height={52}
+              width={380}
+              height={104}
               priority
-              className="h-8 w-auto sm:h-9"
+              className="h-12 w-auto sm:h-[3.375rem]"
             />
           </a>
 

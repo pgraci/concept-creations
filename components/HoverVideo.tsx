@@ -2,6 +2,7 @@
 
 import { useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLightbox } from "./Lightbox";
 
 type Props = {
   src: string;
@@ -11,12 +12,13 @@ type Props = {
   label?: string;
   category?: string;
   year?: string;
+  landscape?: boolean;
 };
 
 /**
- * Autoplays muted in the viewport. On hover (or focus / tap) it unmutes and
- * raises the volume; on leave it fades back to muted. A small audio indicator
- * tells the user sound is available.
+ * Autoplays muted in the viewport. On hover it unmutes and raises the volume;
+ * on leave it fades back to muted. Click / tap opens the video fullscreen in the
+ * lightbox. A small indicator tells the user sound and fullscreen are available.
  */
 export default function HoverVideo({
   src,
@@ -26,9 +28,15 @@ export default function HoverVideo({
   label,
   category,
   year,
+  landscape = false,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [audible, setAudible] = useState(false);
+  const openLightbox = useLightbox();
+
+  const openFull = useCallback(() => {
+    openLightbox({ src, poster, title: label, category, landscape });
+  }, [openLightbox, src, poster, label, category, landscape]);
 
   const enable = useCallback(() => {
     const v = videoRef.current;
@@ -59,15 +67,21 @@ export default function HoverVideo({
 
   return (
     <div
-      className={`group relative overflow-hidden ${rounded} ${className}`}
+      className={`group relative cursor-pointer overflow-hidden ${rounded} ${className}`}
       onMouseEnter={enable}
       onMouseLeave={disable}
       onFocus={enable}
       onBlur={disable}
-      onTouchStart={() => (audible ? disable() : enable())}
+      onClick={openFull}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openFull();
+        }
+      }}
       tabIndex={0}
-      role="group"
-      aria-label={label ? `${label} — hover to listen` : "Showreel video, hover to listen"}
+      role="button"
+      aria-label={label ? `${label} — play fullscreen` : "Play showreel video fullscreen"}
     >
       <video
         ref={videoRef}
@@ -84,6 +98,15 @@ export default function HoverVideo({
       {/* cinematic vignette */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/5 to-transparent" />
       <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-bone/10 transition group-hover:ring-gold/40" />
+
+      {/* play / expand affordance */}
+      <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full border border-bone/30 bg-ink/30 text-bone/90 opacity-0 backdrop-blur-md transition duration-500 group-hover:scale-110 group-hover:opacity-100 group-hover:border-gold group-hover:text-gold">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </span>
+      </div>
 
       {/* audio indicator */}
       <div className="absolute right-4 top-4 z-10 flex items-center gap-2 rounded-full border border-bone/15 bg-ink/55 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-bone/80 backdrop-blur-md">

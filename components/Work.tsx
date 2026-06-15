@@ -24,44 +24,25 @@ export default function Work() {
         </div>
         <Reveal delay={0.15}>
           <p className="max-w-xs text-sm text-bone/55">
-            Every piece autoplays muted. Hover — or tap on mobile — to bring up the sound.
+            Each piece autoplays muted. Hover for sound — click to play fullscreen.
           </p>
         </Reveal>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
-        <Reveal className="lg:col-span-7" y={40}>
-          <HoverVideo
-            src={WORK[1].src}
-            poster={WORK[1].poster}
-            label={WORK[1].title}
-            category={WORK[1].category}
-            year={WORK[1].year}
-            className="aspect-[16/10] h-full w-full"
-          />
-        </Reveal>
-
-        <Reveal className="lg:col-span-5" y={40} delay={0.1}>
-          <HoverVideo
-            src={WORK[2].src}
-            poster={WORK[2].poster}
-            label={WORK[2].title}
-            category={WORK[2].category}
-            year={WORK[2].year}
-            className="aspect-square h-full w-full"
-          />
-        </Reveal>
-
-        <Reveal className="lg:col-span-12" y={40} delay={0.05}>
-          <HoverVideo
-            src={WORK[0].src}
-            poster={WORK[0].poster}
-            label={WORK[0].title}
-            category={WORK[0].category}
-            year={WORK[0].year}
-            className="aspect-[21/9] h-full w-full"
-          />
-        </Reveal>
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {WORK.map((w, i) => (
+          <Reveal key={w.title} y={40} delay={i * 0.08}>
+            <HoverVideo
+              src={w.src}
+              poster={w.poster}
+              label={w.title}
+              category={w.category}
+              year={w.year}
+              landscape={w.orientation === "landscape"}
+              className="aspect-[9/16] w-full"
+            />
+          </Reveal>
+        ))}
       </div>
     </section>
   );

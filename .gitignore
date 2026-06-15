@@ -6,3 +6,6 @@
 npm-debug.log*
 .env*
 /build
+
+# uploaded debug screenshots
+Screenshot*.png
