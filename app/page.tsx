@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import About from "@/components/About";
 import Work from "@/components/Work";
-import MusicVideos from "@/components/MusicVideos";
 import CaseStudy from "@/components/CaseStudy";
 import Clients from "@/components/Clients";
 import Contact from "@/components/Contact";
@@ -21,7 +20,6 @@ export default function Home() {
           <Marquee />
           <About />
           <Work />
-          <MusicVideos />
           <CaseStudy />
           <Clients />
           <Contact />

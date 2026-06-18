@@ -28,7 +28,7 @@ export default function About() {
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-bone/70">
               Concept Creations is a boutique content and storytelling studio based in Kingston,
               Jamaica. We sit at the intersection of cinema and the scroll — crafting premium,
-              high-end visuals and native, UGC-style content for social, digital, music videos, film
+              high-end visuals and native, UGC-style content for social, digital, film
               and television.
             </p>
           </Reveal>

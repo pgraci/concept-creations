@@ -2,7 +2,7 @@ export const SITE = {
   name: "Concept Creations",
   tagline: "Boutique Content & Storytelling Studio",
   city: "Kingston, Jamaica",
-  email: "info@conceptcreationstudios.com",
+  email: "info@conceptcreations.ltd",
   instagram: "https://www.instagram.com/conceptcreations.studios/",
   instagramHandle: "@conceptcreations.studios",
   sunjuiceInstagram: "https://www.instagram.com/sunjuiceja/",
@@ -65,7 +65,7 @@ export const STATS = [
   { value: "100%", label: "Made in Jamaica" },
 ];
 
-// Full-service music-video crew.
+// Full-service production crew.
 export const CREW = [
   "Directors",
   "Directors of Photography",
@@ -74,20 +74,4 @@ export const CREW = [
   "Styling & Wardrobe",
   "Location Scouting",
   "Set Design",
-];
-
-// Placeholder music-video slots — swap in real artists / films later.
-export type MusicVideo = {
-  artist: string;
-  label: string;
-  scope: string;
-  year: string;
-  tint: "gold" | "coral" | "jade";
-  placeholder: boolean;
-};
-
-export const MUSIC_VIDEOS: MusicVideo[] = [
-  { artist: "Bruno Mars", label: "Official Music Video", scope: "International · On location", year: "Coming soon", tint: "gold", placeholder: true },
-  { artist: "Rihanna", label: "Official Music Video", scope: "International · On location", year: "Coming soon", tint: "coral", placeholder: true },
-  { artist: "Drake", label: "Official Music Video", scope: "International · On location", year: "Coming soon", tint: "jade", placeholder: true },
 ];

@@ -17,7 +17,7 @@ const sans = Manrope({
   display: "swap",
 });
 
-const SITE_URL = "https://conceptcreations.studio";
+const SITE_URL = "https://conceptcreations.ltd";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

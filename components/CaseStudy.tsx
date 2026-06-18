@@ -76,9 +76,9 @@ export default function CaseStudy() {
 
             <Reveal delay={0.1}>
               <p className="mt-7 text-lg leading-relaxed text-bone/70">
-                We run Sun Juice JA end-to-end — strategy, production and publishing. Every week we
-                create fresh, original content built for two jobs at once: thumb-stopping social
-                that grows the community, and conversion-focused ad creative that sells the bottle.
+                We ran Sun Juice JA end-to-end — strategy, production and publishing. Every week we
+                created fresh, original content built for two jobs at once: thumb-stopping social
+                that grew the community, and conversion-focused ad creative that sold the bottle.
               </p>
             </Reveal>
 
