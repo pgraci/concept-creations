@@ -36,9 +36,17 @@ npm run build && npm start   # production
 
 ## Form submissions
 
-The contact form posts to `app/api/inquiry/route.ts`, which validates and logs the
-inquiry server-side. To go live, forward the payload to your email / CRM / Slack
-inside that handler (e.g. Resend, SendGrid, or a webhook).
+The contact form posts to `app/api/inquiry/route.ts`, which validates the inquiry
+and emails it via [Resend](https://resend.com) to `info@conceptcreations.ltd`. The
+submitter's address is set as the reply-to, so replies go straight back to them.
+
+Environment variables (set in Vercel):
+
+- `RESEND_API_KEY` — **required**. Your Resend API key.
+- `INQUIRY_TO` — optional. Override the recipient (defaults to `info@conceptcreations.ltd`).
+- `INQUIRY_FROM` — optional. Override the sender (defaults to
+  `inquiries@conceptcreations.ltd`). The sending domain must be verified in Resend;
+  until then, set this to `onboarding@resend.dev`.
 
 ## Media
 
